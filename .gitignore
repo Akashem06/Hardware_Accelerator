@@ -1,2 +1,4 @@
 dump.vcd
-obj_dir/
+build*
+__pycache__/
+.vscode/

@@ -1,0 +1,13 @@
+#include "{{ hw_name }}_tb.h"
+
+double sc_time_stamp() {
+  return 0;
+}
+
+int main(int argc, char** argv) {
+  Verilated::commandArgs(argc, argv);
+  {{ hw_name }}Test tb;
+
+  std::cout << "============ Running {{ hw_name }} Testbench ============\n";
+  return tb.run_all_tests() ? 0 : 1;
+}
