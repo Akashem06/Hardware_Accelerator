@@ -21,7 +21,7 @@ run_all: generate_all
 	@echo "\n✓ All tests completed successfully"
 
 clean:
-	rm -rf test/*/
+	rm -rf test/**/build*
 
 list:
 	@echo "Available hardware modules:"

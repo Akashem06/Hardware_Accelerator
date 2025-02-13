@@ -3,7 +3,7 @@ CORE_DIR := $(ROOT_DIR)/core
 TEST_DIR := $(ROOT_DIR)/test
 
 VERILATOR = verilator
-MODULE_NAME = mux_4to1
+MODULE_NAME = eq32
 BUILD_DIR = build_$(MODULE_NAME)
 BIN_NAME = test_$(MODULE_NAME)
 

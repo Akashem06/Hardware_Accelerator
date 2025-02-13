@@ -18,12 +18,12 @@ SRC = $(MODULE_NAME)_main.cc
 all: build run
 
 build:
-  $(VERILATOR) $(VERILATOR_FLAGS) $(SRC) $(CORE_DIR)/$(MODULE_NAME).sv -o $(BIN_NAME) --Mdir $(BUILD_DIR)
+	$(VERILATOR) $(VERILATOR_FLAGS) $(SRC) $(CORE_DIR)/$(MODULE_NAME).sv -o $(BIN_NAME) --Mdir $(BUILD_DIR)
 
 run: build
-  ./$(BUILD_DIR)/$(BIN_NAME)
+	./$(BUILD_DIR)/$(BIN_NAME)
 
 clean:
-  rm -rf $(BUILD_DIR) $(BIN_NAME) *.vcd
+	rm -rf $(BUILD_DIR) $(BIN_NAME) *.vcd
 
 .PHONY: all build run clean

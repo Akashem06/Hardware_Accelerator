@@ -1,6 +1,6 @@
 all: build
 
 build:
-	@echo "No tests for global defines!"
+	@echo "There are no tests for this file!"
 
 .PHONY: all build

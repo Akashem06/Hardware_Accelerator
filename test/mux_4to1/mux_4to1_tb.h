@@ -99,7 +99,6 @@ class mux_4to1Test : public HardwareTestBase {
       return false;
     }
 
-    std::cout << "Test Case 3 Passed" << std::endl;
     return true;
   }
 
@@ -122,7 +121,6 @@ class mux_4to1Test : public HardwareTestBase {
       return false;
     }
 
-    std::cout << "Test Case 4 Passed" << std::endl;
     return true;
   }
 };
