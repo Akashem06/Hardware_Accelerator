@@ -3,25 +3,25 @@ CORE_DIR := $(ROOT_DIR)/core
 
 HW_FILES := $(wildcard $(CORE_DIR)/*.sv)
 MODULES := $(basename $(notdir $(HW_FILES)))
-SIM_DIRS := $(addprefix simulation/, $(MODULES))
+TEST_DIRS := $(addprefix test/, $(MODULES))
 
 all: generate_all run_all
 
-generate_all: $(SIM_DIRS)
+generate_all: $(TEST_DIRS)
 
-$(SIM_DIRS): simulation/%: core/%.sv
-	@echo "\n=== Generating simulation for $* ==="
-	python3 autogen -t testbench -o simulation -n $*
+$(TEST_DIRS): test/%: core/%.sv
+	@echo "\n=== Generating verilator test for $* ==="
+	python3 autogen -t testbench -o test -n $*
 
 run_all: generate_all
 	@echo "\n=== Running all simulations ==="
 	@for dir in $(MODULES); do \
-		$(MAKE) -C simulation/$$dir -f $$dir.mk || exit 1; \
+		$(MAKE) -C test/$$dir -f $$dir.mk || exit 1; \
 	done
-	@echo "\n✓ All simulations completed successfully"
+	@echo "\n✓ All tests completed successfully"
 
 clean:
-	rm -rf simulation/*/
+	rm -rf test/*/
 
 list:
 	@echo "Available hardware modules:"

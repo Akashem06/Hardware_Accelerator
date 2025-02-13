@@ -1,15 +1,15 @@
 ROOT_DIR ?= $(CURDIR)/../..
 CORE_DIR := $(ROOT_DIR)/core
-SIMULATION_DIR := $(ROOT_DIR)/simulation
+TEST_DIR := $(ROOT_DIR)/test
 
 VERILATOR = verilator
 MODULE_NAME = {{ hw_name }}
 BUILD_DIR = build_$(MODULE_NAME)
-BIN_NAME = sim_$(MODULE_NAME)
+BIN_NAME = test_$(MODULE_NAME)
 
 VERILATOR_FLAGS = --cc --exe --build --trace \
                   -I$(CORE_DIR) \
-                  -I$(SIMULATION_DIR) \
+                  -I$(TEST_DIR) \
                   --top-module $(MODULE_NAME) \
                   -DVM_SC=0
 
