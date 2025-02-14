@@ -36,7 +36,7 @@ class shifterTest : public HardwareTestBase {
 
  private:
   bool test_case_1() {
-    std::cout << "\nRunning Test Case 1..." << std::endl;
+    std::cout << "\nRunning Test Case 1 (0xFF << 4)..." << std::endl;
 
     dut_->in_0 = 0x000000FF;
     dut_->shift_amount = 4;
@@ -54,7 +54,7 @@ class shifterTest : public HardwareTestBase {
   }
 
   bool test_case_2() {
-    std::cout << "\nRunning Test Case 2..." << std::endl;
+    std::cout << "\nRunning Test Case 2 (0x80000000 >> 1)..." << std::endl;
 
     dut_->in_0 = 0x80000000;
     dut_->shift_amount = 1;
@@ -72,7 +72,7 @@ class shifterTest : public HardwareTestBase {
   }
 
   bool test_case_3() {
-    std::cout << "\nRunning Test Case 3..." << std::endl;
+    std::cout << "\nRunning Test Case 3 (0x80000000 >>> 1)..." << std::endl;
 
     dut_->in_0 = 0x80000000;
     dut_->shift_amount = 1;
@@ -90,7 +90,7 @@ class shifterTest : public HardwareTestBase {
   }
 
   bool test_case_4() {
-    std::cout << "\nRunning Test Case 4..." << std::endl;
+    std::cout << "\nRunning Test Case 4 (0x1 << 1)..." << std::endl;
 
     dut_->in_0 = 0x00000001;
     dut_->shift_amount = 1;
@@ -108,7 +108,7 @@ class shifterTest : public HardwareTestBase {
   }
 
   bool test_case_5() {
-    std::cout << "\nRunning Test Case 5..." << std::endl;
+    std::cout << "\nRunning Test Case 5 (0xFFFFFFFE >> 31)..." << std::endl;
 
     dut_->in_0 = 0xFFFFFFFE;
     dut_->shift_amount = 31;
@@ -126,7 +126,7 @@ class shifterTest : public HardwareTestBase {
   }
 
   bool test_case_6() {
-    std::cout << "\nRunning Test Case 6..." << std::endl;
+    std::cout << "\nRunning Test Case 6 (0x80000000 >> 31)..." << std::endl;
 
     dut_->in_0 = 0x80000000;
     dut_->shift_amount = 31;
@@ -144,7 +144,7 @@ class shifterTest : public HardwareTestBase {
   }
 
   bool test_case_7() {
-    std::cout << "\nRunning Test Case 7..." << std::endl;
+    std::cout << "\nRunning Test Case 7 (0x1 << 14)..." << std::endl;
 
     dut_->in_0 = 0x00000001;
     dut_->shift_amount = 14;
@@ -162,7 +162,7 @@ class shifterTest : public HardwareTestBase {
   }
 
   bool test_case_8() {
-    std::cout << "\nRunning Test Case 8..." << std::endl;
+    std::cout << "\nRunning Test Case 8 (0x12345678 >> 16)..." << std::endl;
 
     dut_->in_0 = 0x12345678;
     dut_->shift_amount = 16;

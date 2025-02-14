@@ -33,7 +33,7 @@ class eq32Test : public HardwareTestBase {
 
  private:
   bool test_case_1() {
-    std::cout << "\nRunning Test Case 1..." << std::endl;
+    std::cout << "\nRunning Test Case 1 (DEAD == DEAD)..." << std::endl;
 
     dut_->in_0 = 0xDEAD;
     dut_->in_1 = 0xDEAD;
@@ -50,7 +50,7 @@ class eq32Test : public HardwareTestBase {
   }
 
   bool test_case_2() {
-    std::cout << "\nRunning Test Case 2..." << std::endl;
+    std::cout << "\nRunning Test Case 2 (DEAD != BEEF)..." << std::endl;
 
     dut_->in_0 = 0xDEAD;
     dut_->in_1 = 0xBEEF;

@@ -35,7 +35,7 @@ class adder32Test : public HardwareTestBase {
 
  private:
   bool test_case_1() {
-    std::cout << "\nRunning Test Case 1..." << std::endl;
+    std::cout << "\nRunning Test Case 1 (16 + 32)..." << std::endl;
 
     dut_->in_0 = 0x00000010;  // 16 in decimal (positive)
     dut_->in_1 = 0x00000020;  // 32 in decimal (positive)
@@ -50,12 +50,11 @@ class adder32Test : public HardwareTestBase {
       return false;
     }
 
-    std::cout << "Test Case 1 Passed" << std::endl;
     return true;
   }
 
   bool test_case_2() {
-    std::cout << "\nRunning Test Case 2..." << std::endl;
+    std::cout << "\nRunning Test Case 2 (16 + -16)..." << std::endl;
 
     dut_->in_0 = 0x00000010;  // 16 in decimal (positive)
     dut_->in_1 = 0xFFFFFFF0;  // -16 in decimal (negative, 2's complement)
@@ -69,12 +68,11 @@ class adder32Test : public HardwareTestBase {
       return false;
     }
 
-    std::cout << "Test Case 2 Passed" << std::endl;
     return true;
   }
 
   bool test_case_3() {
-    std::cout << "\nRunning Test Case 3..." << std::endl;
+    std::cout << "\nRunning Test Case 3 (-16 + -32)..." << std::endl;
 
     dut_->in_0 = 0xFFFFFFF0;  // -16 in decimal (negative)
     dut_->in_1 = 0xFFFFFFE0;  // -32 in decimal (negative)
@@ -88,12 +86,11 @@ class adder32Test : public HardwareTestBase {
       return false;
     }
 
-    std::cout << "Test Case 3 Passed" << std::endl;
     return true;
   }
 
   bool test_case_4() {
-    std::cout << "\nRunning Test Case 4..." << std::endl;
+    std::cout << "\nRunning Test Case 4 (16 + 0)..." << std::endl;
 
     dut_->in_0 = 0x00000010;  // 16 in decimal (positive)
     dut_->in_1 = 0x00000000;  // 0 in decimal
@@ -107,7 +104,6 @@ class adder32Test : public HardwareTestBase {
       return false;
     }
 
-    std::cout << "Test Case 4 Passed" << std::endl;
     return true;
   }
 };

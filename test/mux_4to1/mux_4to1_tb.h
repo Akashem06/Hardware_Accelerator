@@ -35,7 +35,7 @@ class mux_4to1Test : public HardwareTestBase {
 
  private:
   bool test_case_1() {
-    std::cout << "\nRunning Test Case 1..." << std::endl;
+    std::cout << "\nRunning Test Case 1 (Select = 00)..." << std::endl;
 
     dut_->in_0 = 0xABCD;
     dut_->in_1 = 0x1234;
@@ -53,12 +53,11 @@ class mux_4to1Test : public HardwareTestBase {
       return false;
     }
 
-    std::cout << "Test Case 1 Passed" << std::endl;
     return true;
   }
 
   bool test_case_2() {
-    std::cout << "\nRunning Test Case 2..." << std::endl;
+    std::cout << "\nRunning Test Case 2... (Select = 01)" << std::endl;
 
     dut_->in_0 = 0xABCD;
     dut_->in_1 = 0x1234;
@@ -76,12 +75,11 @@ class mux_4to1Test : public HardwareTestBase {
       return false;
     }
 
-    std::cout << "Test Case 2 Passed" << std::endl;
     return true;
   }
 
   bool test_case_3() {
-    std::cout << "\nRunning Test Case 3..." << std::endl;
+    std::cout << "\nRunning Test Case 3 (Select = 10)..." << std::endl;
 
     dut_->in_0 = 0xABCD;
     dut_->in_1 = 0x1234;
@@ -103,7 +101,7 @@ class mux_4to1Test : public HardwareTestBase {
   }
 
   bool test_case_4() {
-    std::cout << "\nRunning Test Case 4..." << std::endl;
+    std::cout << "\nRunning Test Case 4 (Select = 11)..." << std::endl;
 
     dut_->in_0 = 0xABCD;
     dut_->in_1 = 0x1234;
