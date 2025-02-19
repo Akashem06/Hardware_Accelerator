@@ -11,7 +11,7 @@ module instruction_cache #(
 )(
     input  logic                            clk,         // Clock signal
     input  logic                            rst_n,       // Active low reset
-    
+
     // CPU Interface
     input  logic [`INSTRUCTION_WIDTH-1:0]   pc,          // Program counter
     input  logic                            fetch_req,   // Fetch request from CPU
@@ -48,7 +48,7 @@ logic [TAG_BITS-1:0]    req_tag;        // Address request tag bits
 logic [SET_BITS-1:0]    req_set;        // Address request set bits
 logic [OFFSET_BITS-1:0] req_offset;     // Address request offset bits
 
-logic [$clog2(LINE_SIZE_BYTES/4)-1:0] word_offset;  // 4 bits for word offset 
+logic [$clog2(LINE_SIZE_BYTES/`WORD_SIZE)-1:0] word_offset;  // 4 bits for word offset 
 
 assign {req_tag, req_set, req_offset} = pc;         // Split program counter into tag, set and offset
 assign word_offset = req_offset[OFFSET_BITS-1:2];   // Assign the word offset to be the offset bits divied by 4

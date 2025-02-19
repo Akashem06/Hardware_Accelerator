@@ -13,5 +13,3 @@ Here are the goals:
 
 Resources:
 ECE320 Waterloo Notes + Textbook
-
-This is 

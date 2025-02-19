@@ -1,3 +1,4 @@
+`define WORD_SIZE 4               // Word size in bytes
 `define INSTRUCTION_WIDTH 32      // Instruction width (in bits)
 `define DATA_WIDTH 32             // Data width (in bits)
 `define ADDR_WIDTH 32             // Address width for memory

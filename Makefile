@@ -20,6 +20,14 @@ run_all: generate_all
 	done
 	@echo "\n✓ All tests completed successfully"
 
+run_one:
+	@if [ -z "$(TEST)" ]; then \
+		echo "Usage: make run_one TEST=<module_name>"; \
+		exit 1; \
+	fi
+	@echo "\n=== Running test for $(TEST) ==="
+	$(MAKE) -C test/$(TEST) -f $(TEST).mk || exit 1
+
 clean:
 	rm -rf test/**/build*
 
@@ -33,4 +41,4 @@ format:
 	@echo "Formatting files..."
 	@find . -type f \( -name "*.cc" -o -name "*.h" -o -name "*.c" \) -exec clang-format -i -style=file {} +
 
-.PHONY: all generate_all run_all clean list format
+.PHONY: all generate_all run_all run_one clean list format
