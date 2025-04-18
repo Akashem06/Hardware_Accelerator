@@ -4,7 +4,7 @@ double sc_time_stamp() {
   return 0;
 }
 
-int main(int argc, char** argv) {
+int main(int argc, char **argv) {
   Verilated::commandArgs(argc, argv);
   pipeline_controlTest tb;
 

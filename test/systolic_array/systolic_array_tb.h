@@ -1,15 +1,15 @@
 #pragma once
 
 #include "../hardware_test.h"
-#include "Vpipeline_control.h"
+#include "Vsystolic_array.h"
 
-class pipeline_controlTest : public HardwareTestBase {
+class systolic_arrayTest : public HardwareTestBase {
  protected:
-  std::unique_ptr<Vpipeline_control> dut_;
+  std::unique_ptr<Vsystolic_array> dut_;
 
  public:
-  pipeline_controlTest() : HardwareTestBase() {
-    dut_ = std::make_unique<Vpipeline_control>();
+  systolic_arrayTest() : HardwareTestBase() {
+    dut_ = std::make_unique<Vsystolic_array>();
   }
 
   void eval_clock_low() override {
@@ -35,10 +35,9 @@ class pipeline_controlTest : public HardwareTestBase {
 
     all_passed &= test_case_1();
     all_passed &= test_case_2();
-
-    std::cout << "\nFinal Result: " << (all_passed ? "ALL TESTS PASSED" : "SOME TESTS FAILED")
-              << std::endl;
-
+        
+    std::cout << "\nFinal Result: " << (all_passed ? "ALL TESTS PASSED" : "SOME TESTS FAILED") << std::endl;
+        
     return all_passed;
   }
 

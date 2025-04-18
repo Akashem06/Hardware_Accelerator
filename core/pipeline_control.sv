@@ -29,12 +29,12 @@ import matrix_ops_pkg::*;
     input  logic        matrix_busy,     // Matrix unit busy signal (from accelerator)
     output logic        execute_stall,
     output logic        execute_flush,
-    
+
     // Memory stage interface
     input  logic        mem_valid,
     input  logic [4:0]  mem_rd,
     input  logic        mem_wb_en,
-    
+
     // Writeback stage interface
     input  logic        wb_valid,
     input  logic [4:0]  wb_rd,
@@ -48,5 +48,17 @@ logic data_hazard;
 logic structural_hazard;
 logic control_hazard = 1'b0;
 logic matrix_conflict;
+
+//-------------------------------------------------------------------------
+// Data hazard detection (RAW hazards)
+//-------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------
+// Structural hazard detection - matrix unit conflicts
+//-------------------------------------------------------------------------
+
+//-------------------------------------------------------------------------
+// Control signals generation
+//-------------------------------------------------------------------------
 
 endmodule

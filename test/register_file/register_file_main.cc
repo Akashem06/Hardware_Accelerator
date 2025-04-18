@@ -1,4 +1,4 @@
-#include "matrix_ops_pkg_tb.h"
+#include "register_file_tb.h"
 
 double sc_time_stamp() {
   return 0;
@@ -6,8 +6,8 @@ double sc_time_stamp() {
 
 int main(int argc, char **argv) {
   Verilated::commandArgs(argc, argv);
-  matrix_ops_pkgTest tb;
+  register_fileTest tb;
 
-  std::cout << "============ Running matrix_ops_pkg Testbench ============\n";
+  std::cout << "============ Running register_file Testbench ============\n";
   return tb.run_all_tests() ? 0 : 1;
 }

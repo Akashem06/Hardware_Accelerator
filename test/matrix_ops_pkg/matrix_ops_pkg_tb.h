@@ -4,7 +4,7 @@
 #include "Vmatrix_ops_pkg.h"
 
 class matrix_ops_pkgTest : public HardwareTestBase {
-public:
+ public:
   matrix_ops_pkgTest() : HardwareTestBase() {}
 
   void eval_clock_low() override {}
